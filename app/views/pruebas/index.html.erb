@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="show-for-large-up">This text is shown on large screens and up.</strong>">Hola</h1>
+
+  <tbody>
+    <% @pruebas.each do |prueba| %>
+      <tr>
+        <td><%= link_to 'Show', prueba %></td>
+        <td><%= link_to 'Edit', edit_prueba_path(prueba) %></td>
+        <td><%= link_to 'Destroy', prueba, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<a href="#" class="button show-for-large-up">Miau</a>
+
+<div class="tabs-content">
+  <div class="content active" id="panel1">
+    <%= render 'promosyproductos' %>
+  </div>
+  <div class="content" id="panel2">
+    <%= render 'informacion' %>
+  </div>
+  <div class="content" id="panel3">
+    <%= render 'comentarios' %>
+  </div>
+</div>
+
+<ul class="tabs show-for-small-only" data-tab>
+  <li class="tab-title active"><a href="#panel1">Promos y productos</a></li>
+  <li class="tab-title"><a href="#panel2">Información</a></li>
+  <li class="tab-title"><a href="#panel3">Comentarios</a></li>
+</ul>

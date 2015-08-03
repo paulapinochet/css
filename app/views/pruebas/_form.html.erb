@@ -1,0 +1,61 @@
+<%= form_for(@prueba) do |f| %>
+  <% if @prueba.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prueba.errors.count, "error") %> prohibited this prueba from being saved:</h2>
+
+      <ul>
+      <% @prueba.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<form>
+  <div class="row">
+    <div class="large-12 columns">
+        <input type="text" placeholder="Nombre" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 columns">
+        <input type="text" placeholder="Email" />
+    </div>
+    <div class="large-4 columns">
+        <input type="text" placeholder="Teléfono" />
+    </div>
+    <div class="large-4 columns">
+        <input type="text" placeholder="Rut" />
+    </div>
+    <div class="large-4 columns">
+        <input type="text" placeholder="Contraseña" />
+    </div>
+      <div class="large-4 columns">
+        <input type="text" placeholder="Confirma tu contraseña" />
+    </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <label>Elige tu horario de atención
+        <select>
+          <option value="husker">No</option>
+          <option value="starbuck">Bueno ya</option>
+          <option value="hotdog">Ni idea</option>
+        </select>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 columns">
+      <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Abierto las 24 horas</label>
+    </div>
+</form>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

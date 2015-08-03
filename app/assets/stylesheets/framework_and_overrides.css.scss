@@ -1,0 +1,109 @@
+// import the CSS framework
+@import "foundation";
+
+// override for the 'Home' navigation link
+.top-bar .name {
+  font-size: rem-calc(13);
+  line-height: 45px; }
+.top-bar .name a {
+  font-weight: normal;
+  color: white;
+  padding: 0 15px; }
+
+// THESE ARE EXAMPLES YOU CAN MODIFY
+// create mixins using Foundation classes
+@mixin twelve-columns {
+  @extend .small-12;
+  @extend .columns;
+  }
+@mixin six-columns-centered {
+  @extend .small-6;
+  @extend .columns;
+  @extend .text-center;
+  }
+// create your own classes
+// to make views framework-neutral
+.column {
+  @include six-columns-centered;
+  }
+.form {
+  @include grid-column(6);
+  }
+.form-centered {
+  @include six-columns-centered;
+  }
+.submit {
+  @extend .button;
+  @extend .radius;
+  }
+// apply styles to HTML elements
+// to make views framework-neutral
+main {
+  @include twelve-columns;
+  background-color: #eee;
+  }
+section {
+  @extend .row;
+  margin-top: 20px;
+  }
+
+  a {
+  color: #000;
+
+  &:visited {
+    color: white;
+  }
+
+  &:hover {
+    color: red;
+    background-color: #000;
+  }
+}
+
+/*Botón default*/
+a.button {
+  background-color: #4ab5b3;
+}
+
+ul.tabs {
+  width: 100%;
+  font-size:13px;
+  height:100%;
+}
+
+.tab-title {
+  width:33%;
+}
+
+.tabs .tab-title > a {
+  font-size: 13px;
+}
+
+#imageninformacion { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+   height:50%;
+   margin-top: -15px;
+}
+
+#imageninformacion > h2 { 
+   position: absolute; 
+   top: 200px; 
+   text-align: center;
+   width: 100%; 
+   color: white;
+   font-family: 'Roboto', sans-serif;
+}
+
+.content {
+  background-color: black;
+}
+
+.content > h4 {
+  color:white;
+}
+
+.content > p {
+  color:#CCCCCC;
+}
+
